@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8.9)
+project(telegram-data-clustering)
+include_directories(include)
+file(GLOB SOURCES "src/*.cpp")
+link_libraries(stdc++fs)
+add_executable(tgnews ${SOURCES})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -lstdc++fs")
