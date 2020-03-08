@@ -4,7 +4,7 @@
 #include <map>
 #include <set>
 #include <cmath>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <locale>
 
 #include "utils.h"
@@ -83,7 +83,7 @@ public:
         lang_data[L"en"] = vector<wstring>();
         lang_data[L"ru"] = vector<wstring>();
 
-        for (const auto & entry : filesystem::directory_iterator(path))
+        for (const auto & entry : experimental::filesystem::directory_iterator(path))
         {
             string filename = entry.path();
             wstring filename_only = get_filename_only(filename);
@@ -121,7 +121,7 @@ public:
 
         vector<wstring> articles;
 
-        for (const auto & entry : filesystem::directory_iterator(path))
+        for (const auto & entry : experimental::filesystem::directory_iterator(path))
         {
             string filename = entry.path();
             wstring filename_only = get_filename_only(filename);
@@ -181,7 +181,7 @@ public:
             {L"other", vector<wstring>()}
         };
 
-        for (const auto & entry : filesystem::directory_iterator(path))
+        for (const auto & entry : experimental::filesystem::directory_iterator(path))
         {
             string filename = entry.path();
             wstring filename_only = get_filename_only(filename);
@@ -238,7 +238,7 @@ public:
 
         Threads threads(header_similar_share);
 
-        for (const auto & entry : filesystem::directory_iterator(path))
+        for (const auto & entry : experimental::filesystem::directory_iterator(path))
         {
             string filename = entry.path();
             wstring filename_only = get_filename_only(filename);
@@ -306,7 +306,7 @@ public:
         map<wstring, wstring> category_data;
         Threads threads(header_similar_share);
 
-        for (const auto & entry : filesystem::directory_iterator(path))
+        for (const auto & entry : experimental::filesystem::directory_iterator(path))
         {
             string filename = entry.path();
             wstring filename_only = get_filename_only(filename);
